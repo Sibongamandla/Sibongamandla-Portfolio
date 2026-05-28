@@ -1,12 +1,54 @@
 import { Link } from "react-router-dom";
-import { QrCode, Download, Share, Wallet } from "lucide-react";
+import { Download, Share, Wallet } from "lucide-react";
 import { motion } from "motion/react";
 import { PageTransition } from "../components/PageTransition";
+import { useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 
 export function ProfileCardPage() {
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const showToast = (msg: string) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 3000);
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Sibongamandla Mnyandu - Portfolio',
+      text: 'Check out Sibongamandla Mnyandu\'s digital business card and portfolio.',
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      showToast("Link copied to clipboard!");
+    }
+  };
+
+  const vCardString = `BEGIN:VCARD
+VERSION:3.0
+FN:Sibongamandla Mnyandu
+TEL:+27 76 385 8588
+EMAIL:sibonga@isutech.co.za
+ADR:;;Pretoria;ZA
+URL:${window.location.origin}
+END:VCARD`;
+
   return (
     <PageTransition title="PROFILE">
       <div className="min-h-screen bg-transparent flex flex-col items-center justify-center p-6 md:p-12 relative font-sans overflow-hidden">
+        {toastMessage && (
+          <div className="fixed top-20 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-3 rounded-full shadow-lg z-[100] text-sm font-mono tracking-widest uppercase animate-pulse">
+            {toastMessage}
+          </div>
+        )}
         <Link to="/" className="fixed top-8 left-8 text-black/50 hover:text-black transition-colors uppercase font-mono tracking-widest text-xs z-50">
           &larr; Back to Portfolio
         </Link>
@@ -20,7 +62,7 @@ export function ProfileCardPage() {
             </h1>
             
             <div className="flex flex-col gap-4 mt-8 w-full max-w-[280px]">
-              <button className="flex items-center gap-4 bg-white border border-black/5 px-6 py-4 rounded-2xl shadow-sm hover:shadow-md hover:border-black/20 transition-all group w-full text-left">
+              <button onClick={() => showToast("Apple Wallet integration coming soon!")} className="flex items-center gap-4 bg-white border border-black/5 px-6 py-4 rounded-2xl shadow-sm hover:shadow-md hover:border-black/20 transition-all group w-full text-left">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center bg-transparent border border-black/10 shrink-0 relative overflow-hidden group-hover:scale-105 transition-transform">
                   {/* Apple Wallet colors representation */}
                   <div className="absolute inset-0 bg-gradient-to-br from-red-400 via-yellow-400 to-green-400 opacity-80 mix-blend-multiply"></div>
@@ -32,7 +74,7 @@ export function ProfileCardPage() {
                 </div>
               </button>
   
-              <button className="flex items-center gap-4 bg-white border border-black/5 px-6 py-4 rounded-2xl shadow-sm hover:shadow-md hover:border-black/20 transition-all group w-full text-left">
+              <button onClick={() => showToast("Google Wallet integration coming soon!")} className="flex items-center gap-4 bg-white border border-black/5 px-6 py-4 rounded-2xl shadow-sm hover:shadow-md hover:border-black/20 transition-all group w-full text-left">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center bg-transparent border border-black/10 shrink-0 relative overflow-hidden group-hover:scale-105 transition-transform">
                   {/* Google Wallet colors representation */}
                   <div className="absolute inset-x-0 top-0 h-1/2 bg-blue-500 rounded-t-full"></div>
@@ -47,10 +89,10 @@ export function ProfileCardPage() {
               </button>
               
               <div className="flex gap-4 mt-6">
-                 <button className="flex-1 flex items-center justify-center gap-2 bg-black text-white px-4 py-3 rounded-xl hover:bg-neutral-800 transition-colors text-xs uppercase tracking-widest font-mono shadow-md hover:shadow-xl">
+                 <a href="/assets/cv.pdf" download className="flex-1 flex items-center justify-center gap-2 bg-black text-white px-4 py-3 rounded-xl hover:bg-neutral-800 transition-colors text-xs uppercase tracking-widest font-mono shadow-md hover:shadow-xl">
                    <Download className="w-4 h-4" /> CV
-                 </button>
-                 <button className="flex-1 flex items-center justify-center gap-2 bg-white border border-black/10 text-black px-4 py-3 rounded-xl hover:bg-black hover:text-white transition-colors text-xs uppercase tracking-widest font-mono shadow-sm">
+                 </a>
+                 <button onClick={handleShare} className="flex-1 flex items-center justify-center gap-2 bg-white border border-black/10 text-black px-4 py-3 rounded-xl hover:bg-black hover:text-white transition-colors text-xs uppercase tracking-widest font-mono shadow-sm">
                    <Share className="w-4 h-4" /> Share
                  </button>
               </div>
@@ -108,11 +150,11 @@ export function ProfileCardPage() {
                {/* QR Code Section */}
                <div className="absolute left-0 right-0 bottom-0 h-40 bg-gradient-to-t from-black via-black to-transparent flex items-end justify-center pb-8 z-10 pointer-events-none">
                   <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.1)] pointer-events-auto hover:bg-white transition-colors cursor-pointer group/qr">
-                     <div className="w-24 h-24 relative overflow-hidden bg-white group-hover/qr:scale-105 transition-transform duration-500 flex items-center justify-center rounded-lg">
-                       <QrCode className="w-20 h-20 text-black mix-blend-multiply" strokeWidth={1.5} />
+                     <div className="w-24 h-24 relative overflow-hidden bg-white group-hover/qr:scale-105 transition-transform duration-500 flex items-center justify-center rounded-lg p-1">
+                       <QRCodeSVG value={vCardString} size={88} className="mix-blend-multiply" />
                        
                        {/* Subtle scan line animation */}
-                       <div className="absolute top-0 left-0 right-0 h-0.5 bg-black/30 shadow-[0_0_10px_black] animate-scan"></div>
+                       <div className="absolute top-0 left-0 right-0 h-0.5 bg-black/30 shadow-[0_0_10px_black] animate-scan pointer-events-none"></div>
                      </div>
                   </div>
                </div>

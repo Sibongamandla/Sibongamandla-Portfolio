@@ -1,9 +1,16 @@
+import conformedgeImg from '../assets/conformedge-1.png';
+import solusolutionsImg from '../assets/solusolutions-1.jpg';
+import businessAutomationImg from '../assets/business-automation.png';
+import tumiWeddingImg from '../assets/tumi-wedding-4.png';
+import tgAutoWorxImg from '../assets/tg-auto-worx-4.png';
+import bonsaiEngineeringImg from '../assets/bonsai-engineering-3.png';
+
 export const projects = [
   {
     id: 1,
     title: "ConformEdge",
     category: "AI & Risk Management",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    image: conformedgeImg,
     year: "2026",
     details: "Developing a unified compliance and risk management platform tailored for the engineering, mining, and construction sectors."
   },
@@ -17,9 +24,10 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Enterprise CRM",
-    category: "Web Platform",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
+    title: "SoluSolutions",
+    category: "Enterprise CRM",
+    url: "https://github.com/INF-370-2025/inf-370-team16",
+    image: solusolutionsImg,
     year: "2025",
     details: "Built a comprehensive workflow platform for SoluGrowth featuring role-based access control with .NET and Angular."
   },
@@ -27,7 +35,7 @@ export const projects = [
     id: 4,
     title: "Business Automation",
     category: "Web Engineering",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2000&auto=format&fit=crop",
+    image: businessAutomationImg,
     year: "2022—25",
     details: "Engineered automated workflows for client sites, including lead generation and real-time data sync using React, Next.js, Node.js."
   }
@@ -36,28 +44,28 @@ export const projects = [
 export const freelanceProjects = [
   {
     id: 1,
-    title: "Tumi Portfolio",
-    category: "Personal Brand",
+    title: "Vows & Vines (Tumi's Wedding Invite)",
+    category: "Event Platform",
     url: "https://tumi.isutech.co.za",
-    image: "https://images.unsplash.com/photo-1545239351-ef35f43d514b?q=80&w=2000&auto=format&fit=crop",
+    image: tumiWeddingImg,
     year: "Recent",
-    details: "A personal portfolio and booking platform tailored for professional branding and client engagement."
+    details: "A bespoke digital wedding invitation platform featuring dynamic RSVP management and a comprehensive guest guide."
   },
   {
     id: 2,
     title: "TG Auto Worx",
     category: "Automotive Services",
     url: "https://www.tgautoworx.co.za",
-    image: "https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=2000&auto=format&fit=crop",
+    image: tgAutoWorxImg,
     year: "Recent",
     details: "A comprehensive digital presence for an auto repair workshop, featuring service listings and customer inquiries."
   },
   {
     id: 3,
-    title: "Bonsai Engineering",
+    title: "Bonsai Engineering Consulting",
     category: "Engineering Firm",
     url: "https://www.bonsaiengineering.co.za",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop",
+    image: bonsaiEngineeringImg,
     year: "Recent",
     details: "Corporate website for an engineering firm highlighting core services, completed projects, and technical expertise."
   },

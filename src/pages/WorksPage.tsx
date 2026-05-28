@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { projects } from "../data";
 import { ArrowUpRight } from "lucide-react";
 
-function ProjectCard({ project, index, total }: { project: any, index: number, total: number }) {
+function ProjectCard({ project, index, total }: { project: any, index: number, total: number, key?: number }) {
   const techStack = [
     "NEXT.JS • SUPABASE • GSAP",
     "REACT NATIVE • ZUSTAND • SQL",
