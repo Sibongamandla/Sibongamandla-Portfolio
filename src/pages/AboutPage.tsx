@@ -1,5 +1,6 @@
 import { PageTransition } from "../components/PageTransition";
 import { Navbar } from "../components/Navbar";
+import profilePic from "../assets/sibz.jpg";
 
 export function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export function AboutPage() {
               <span className="font-mono text-sm uppercase tracking-widest text-neutral-500">01/</span>
               <div className="w-full aspect-[3/4] bg-neutral-200 overflow-hidden rounded-2xl border border-black/10 shadow-sm relative group">
                 <img 
-                  src="/assets/sibz.jpg" 
+                  src={profilePic} 
                   alt="Sibongamandla Mnyandu"
                   className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 scale-105 group-hover:scale-100" 
                 />

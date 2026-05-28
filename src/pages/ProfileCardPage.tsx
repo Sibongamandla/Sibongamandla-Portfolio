@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { PageTransition } from "../components/PageTransition";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
+import profilePic from "../assets/sibz.jpg";
 
 export function ProfileCardPage() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -124,7 +125,7 @@ export function ProfileCardPage() {
                     </h2>
                     <div className="w-16 h-16 rounded-full bg-neutral-800 overflow-hidden shrink-0 border-2 border-white/10 shadow-inner">
                       <img 
-                        src="/assets/sibz.jpg" 
+                        src={profilePic} 
                         alt="Profile"
                         className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" 
                       />

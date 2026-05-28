@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import profilePic from "../assets/sibz.jpg";
 
 export function About() {
   return (
@@ -31,7 +32,7 @@ export function About() {
               {/* Profile Photo block */}
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-sm overflow-hidden border-b-[8px] border-r-[8px] border-black bg-neutral-200 shrink-0 relative group">
                  <img 
-                   src="/assets/sibz.jpg" 
+                   src={profilePic}
                    alt="Sibongamandla Mnyandu" 
                    className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 scale-105 group-hover:scale-100" 
                  />
