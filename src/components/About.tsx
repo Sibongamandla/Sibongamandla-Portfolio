@@ -40,7 +40,7 @@ export function About() {
         </div>
 
         <div className="flex flex-col h-full justify-end pb-12">
-          <h2 className="text-[12vw] md:text-[9vw] leading-[0.85] font-display font-medium tracking-tighter uppercase mb-12 flex flex-col items-start text-black">
+          <h2 className="text-[clamp(3.5rem,min(5.5vw,14vh),8rem)] leading-[0.85] font-display font-medium tracking-tighter uppercase mb-12 flex flex-col items-start text-black">
             <span className="block">DESIGN</span>
             <span className="block text-[#9E1B1B]">BACKEND</span>
             <span className="block">FRONTEND</span>
