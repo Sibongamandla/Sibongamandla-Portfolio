@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="h-screen flex-shrink-0 flex flex-col justify-between pt-20 pb-12 px-12 md:pl-32 md:pr-16 relative w-[90vw] md:w-[75vw]">
+    <section className="h-screen flex-shrink-0 flex flex-col justify-between pt-20 pb-12 px-6 md:pl-32 md:pr-16 relative w-[90vw] md:w-[75vw]">
       
       {/* Top Section */}
       <div className="flex flex-col md:flex-row items-end justify-between w-full mt-4 md:mt-8">

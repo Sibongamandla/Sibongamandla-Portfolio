@@ -6,7 +6,7 @@ export function Contact() {
         <div className="absolute top-1/2 -translate-y-1/2 -left-64 w-[120vh] h-[120vh] opacity-80 blur-[100px] z-0 rounded-full mix-blend-screen scale-x-[2.0]" style={{ backgroundImage: "radial-gradient(circle at center, #9E1B1B 0%, #4d190b 40%, transparent 70%)" }}></div>
       </div>
       
-      <div className="w-full h-full relative z-10 px-12 md:px-32 flex flex-col justify-center max-w-[80vw]">
+      <div className="w-full h-full relative z-10 px-6 md:px-32 flex flex-col justify-center max-w-[80vw]">
         <h2 className="text-[14vw] md:text-[12vw] leading-none font-display font-bold tracking-tighter uppercase mb-6 flex flex-col items-start gap-4 text-[#f5f5f0]">
           <span className="block">Let's have</span>
           <span className="block">a chat</span>

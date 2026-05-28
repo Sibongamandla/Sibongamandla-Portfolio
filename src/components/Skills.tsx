@@ -1,6 +1,6 @@
 export function Skills() {
   return (
-    <section id="skills" className="h-screen flex-shrink-0 flex items-center px-12 md:px-16 relative w-[90vw] md:w-[75vw]">
+    <section id="skills" className="h-screen flex-shrink-0 flex items-center px-6 md:px-16 relative w-[90vw] md:w-[75vw]">
       <div className="flex flex-col md:flex-row items-end justify-between w-full h-full pb-32 gap-16 md:gap-32">
         <div className="flex flex-col justify-end h-full">
            <div className="mb-12 md:mb-24">

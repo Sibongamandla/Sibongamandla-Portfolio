@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Interests() {
   return (
-    <section id="interests" className="h-screen flex-shrink-0 flex items-center px-12 md:px-16 relative w-[85vw] md:w-[60vw]">
+    <section id="interests" className="h-screen flex-shrink-0 flex items-center px-6 md:px-16 relative w-[85vw] md:w-[60vw]">
       <div className="flex flex-col justify-end h-full w-full pb-32">
          <div className="mb-12 md:mb-24">
            <span className="font-mono text-xl md:text-2xl mb-4 text-black block">03/</span>

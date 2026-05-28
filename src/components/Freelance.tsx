@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Freelance() {
   return (
-    <section id="freelance" className="h-screen flex-shrink-0 flex items-center px-12 md:px-32 relative">
+    <section id="freelance" className="h-screen flex-shrink-0 flex items-center px-6 md:px-32 relative">
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-32 h-full py-32">
         <div className="flex flex-col max-w-sm mr-12 shrink-0">
           <span className="font-mono text-xl md:text-2xl mb-4 text-[#9E1B1B]">06/</span>

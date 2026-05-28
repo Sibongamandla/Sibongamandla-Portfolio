@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function About() {
   return (
-    <section id="about" className="h-screen flex-shrink-0 flex items-center px-12 md:px-16 relative w-[100vw] md:w-[80vw]">
+    <section id="about" className="h-screen flex-shrink-0 flex items-center px-6 md:px-16 relative w-[100vw] md:w-[80vw]">
       <div className="flex flex-col md:flex-row items-center justify-between w-full h-full pb-32 gap-16 md:gap-32">
         <div className="flex flex-col justify-end h-full">
            <div className="mb-24">
